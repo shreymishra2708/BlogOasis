@@ -5,7 +5,7 @@ const app = express();
 
 const User = require("./models/User");
 const cookieParser = require("cookie-parser");
-
+ 
 //jsonweb tokens
 const jwt = require("jsonwebtoken");
 
@@ -53,7 +53,7 @@ app.post("/login", async (req, res) => {
     res.status(400).json("wrong credentials");
   }
   //res.json(passOk);
-});
+}); 
 app.get("/profile", (req, res) => {
   const { token } = req.cookies;
   jwt.verify(token, secret, {}, (err, info) => {
